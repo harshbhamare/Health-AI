@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask AI</title>
+  <style>
+    /* Add this inside a <style> tag in the <head> or in a separate CSS file */
+body {
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00ffe7;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+}
+
+input[type="text"] {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus {
+  background: rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 10px #00fff7;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #00ffe7, #007cf0);
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px #00ffe7;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00fff7;
+}
+
+  </style>
+</head>
+<body>
+  <h2>Enter your question...</h2>
+  <form action="/ask" method="post">
+      <input type="text" name="question" placeholder="Enter your question">
+      <input type="text" name="age" placeholder="Enter your age">
+      <input type="text" name="weight" placeholder="Enter your weight">
+      <input type="text" name="pre" id="" placeholder="pre disease">
+      <button type="submit">Ask to AI</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Response</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1, h3 {
+            text-align: center;
+        }
+        .section {
+            margin-top: 20px;
+            border-top: 2px solid #eee;
+            padding-top: 20px;
+        }
+        .section p {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+        .answer {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #4CAF50;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>AI Response</h1>
+
+    <!-- Question Section -->
+    <div class="section">
+        <h3>Question Asked:</h3>
+        <p><strong><%= question %></strong></p>
+    </div>
+
+    <!-- Medical Information Section -->
+    <div class="section">
+        <h3>Medical Information:</h3>
+        <p><strong>Pre-condition:</strong> <%= pre %></p>
+        <p><strong>Weight:</strong> <%= weight %> kg</p>
+        <p><strong>Age:</strong> <%= age %> years</p>
+    </div>
+
+    <!-- AI Answer Section -->
+    <div class="section answer">
+        <h3>AI's Structured Response:</h3>
+        <div>
+            <h4>1. Overview:</h4>
+            <p><%= answer.split("\n")[0] %></p>
+
+            <h4>2. Key Points:</h4>
+            <ul>
+                <% answer.split("\n").slice(1).forEach(point => { %>
+                    <li><%= point %></li>
+                <% }) %>
+            </ul>
+
+            <h4>3. Conclusion:</h4>
+            <p><%= answer.split("\n").slice(-1) %></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
